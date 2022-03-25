@@ -1,6 +1,6 @@
 public class Conta {
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Account> obterContasRecentes(){
         
         List<Account> contas = [SELECT Id, Name, Type FROM Account ORDER BY CreatedDate DESC LIMIT 5];
